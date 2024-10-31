@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 2000;
 
 dotenv.config();
 
+app.use(express.json()) //to parse req.body
+app.use(express.urlencoded({extended:true})) //to parse form data
+
 app.use("/api/auth",authRoutes);
 
 app.listen(PORT,()=>{
