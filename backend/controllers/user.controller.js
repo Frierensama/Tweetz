@@ -99,6 +99,7 @@ export const updateUser = async (req, res) => {
 
 				await cloudinary.uploader.destroy(user.profileImg.split("/").pop().split(".")[0]);
 			}
+			console.log("profile pic added");
 			const uploadedResponse = await cloudinary.uploader.upload(profileImg);
 			profileImg = uploadedResponse.secure_url;
 		}
